@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tavern Lounge - Table 1837 - Glen Rock Mill Inn</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <img src="table_1837_web-white.png" alt="Table 1837 - Glen Rock Mill Inn" class="logo-img">
+            </a>
+            <nav class="nav">
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-menu" id="navMenu">
+                    <a href="#" class="nav-link">Home</a>
+                    <a href="#" class="nav-link">Menus</a>
+                    <a href="#" class="nav-link">Lodging</a>
+                    <a href="#" class="nav-link">Private Events</a>
+                    <a href="#" class="nav-link">Gift Cards</a>
+                    <a href="#" class="nav-link">Contact Us</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-pretext">WELCOME TO</p>
+                    <h1 class="hero-title">TAVERN LOUNGE</h1>
+                    <p class="hero-subtitle">Signature Cocktails & Curated Spirits</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sub Navigation -->
+        <section class="sub-nav">
+            <div class="container">
+                <nav class="sub-nav-menu">
+                    <a href="#" class="sub-nav-link active">Signature Cocktails</a>
+                    <a href="#" class="sub-nav-link">Wine List</a>
+                    <a href="#" class="sub-nav-link">Beer Selection</a>
+                    <a href="#" class="sub-nav-link">Spirits</a>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Cocktails Section -->
+        <section class="cocktails">
+            <div class="container">
+                <div class="cocktails-grid" id="cocktailsGrid">
+                    <!-- Cocktail cards will be dynamically generated here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logos">
+                    <img src="table_1837_web-white.png" alt="Table 1837" class="footer-logo">
+                    <img src="glen_rock_mill_inn_logo.png" alt="Glen Rock Mill Inn" class="footer-logo">
+                </div>
+                
+                <div class="footer-sections">
+                    <div class="footer-section">
+                        <h3>Hours</h3>
+                        <h4>Lunch and Dinner Seating</h4>
+                        <ul>
+                            <li>Monday - Closed (available for private events)</li>
+                            <li>Tuesday - Closed (available for private events)</li>
+                            <li>Lunch Seating 12 - 3, Wednesday through Saturday</li>
+                            <li>Brunch Seating 11am to 2:15 pm Sunday</li>
+                            <li>Dinner Seating 4pm to 8pm Wednesday, Thursday & Sunday</li>
+                            <li>4pm to 9pm Friday & Saturday</li>
+                        </ul>
+                        
+                        <h4>Tavern Lounge</h4>
+                        <ul>
+                            <li>Wednesday & Thursday 12pm to 10pm</li>
+                            <li>Friday & Saturday 12pm to 11pm</li>
+                            <li>Sunday 4pm to 10pm</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Craft Cocktail Resources</h3>
+                        <ul>
+                            <li><a href="https://www.liquor.com/cocktail-recipes/" target="_blank">Craft Cocktail Trends</a></li>
+                            <li><a href="https://punchdrink.com/" target="_blank">Punch Magazine</a></li>
+                            <li><a href="https://www.diffordsguide.com/" target="_blank">Difford's Guide</a></li>
+                            <li><a href="https://www.facebook.com/table1837" target="_blank">Facebook</a></li>
+                            <li><a href="https://www.instagram.com/table1837" target="_blank">Instagram</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Contact Info</h3>
+                        <p><strong>Phone:</strong> (717) 235-5918</p>
+                        <p><strong>Email:</strong> info@table1837.com</p>
+                        <p><strong>Location:</strong> 50 Water Street Glen Rock, PA 17327</p>
+                        
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/table1837" target="_blank" class="social-link">Facebook</a>
+                            <a href="https://www.instagram.com/table1837" target="_blank" class="social-link">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Recipe Details -->
+    <div class="modal" id="recipeModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- Recipe details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
