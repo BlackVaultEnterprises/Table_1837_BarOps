@@ -112,7 +112,8 @@ const navMenu = document.getElementById('navMenu');
 const cocktailsGrid = document.getElementById('cocktailsGrid');
 const modal = document.getElementById('recipeModal');
 const closeModal = document.getElementById('closeModal');
-const modalBody = document.getElementById('modalBody');
+const modalBody = document.getElementById("modalBody");
+const cocktailSearch = document.getElementById("cocktailSearch");
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
@@ -122,17 +123,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Generate cocktail cards
 function generateCocktailCards() {
-    cocktailsGrid.innerHTML = '';
+    cocktailsGrid.innerHTML = "";
     
     cocktailData.cocktails.forEach((cocktail, index) => {
-        const card = document.createElement('div');
-        card.className = 'cocktail-card';
-        card.setAttribute('data-cocktail-index', index);
+        const card = document.createElement("div");
+        card.className = "cocktail-card";
+        card.setAttribute("data-cocktail-index", index);
         
+        // Placeholder for cocktail image - actual image will be added later
         card.innerHTML = `
+            <img src="https://via.placeholder.com/280x320?text=Cocktail+Image" alt="${cocktail.name}">
             <h3 class="cocktail-name">${cocktail.name}</h3>
-            <p class="cocktail-description">${cocktail.menu_description}</p>
-            <div class="cocktail-price">${cocktail.price}</div>
         `;
         
         cocktailsGrid.appendChild(card);
@@ -183,38 +184,19 @@ function showRecipeModal(cocktailIndex) {
     const cocktail = cocktailData.cocktails[cocktailIndex];
     
     let modalContent = `
-        <h2 class="recipe-title">${cocktail.name}</h2>
+        <h2 class="recipe-title">${cocktail.name} - ${cocktail.glassware_type}</h2>
+        <p>Garnish: ${cocktail.garnish_details}</p>
         
         <div class="recipe-section">
-            <h3>Ingredients</h3>
+            <h3>IN ${cocktail.glassware_type.toUpperCase()}:</h3>
             <ul>
     `;
     
-    cocktail.detailed_recipe.ingredients.forEach(ingredient => {
-        modalContent += `<li>${ingredient}</li>`;
+    cocktail.detailed_recipe.ingredients.forEach((ingredient, index) => {
+        modalContent += `<li>${index + 1}. ${ingredient}</li>`;
     });
     
     modalContent += `</ul></div>`;
-    
-    // Add topping if exists
-    if (cocktail.detailed_recipe.topping) {
-        modalContent += `
-            <div class="recipe-section">
-                <h3>Topping</h3>
-                <ul><li>${cocktail.detailed_recipe.topping}</li></ul>
-            </div>
-        `;
-    }
-    
-    // Add garnish if exists
-    if (cocktail.detailed_recipe.garnish) {
-        modalContent += `
-            <div class="recipe-section">
-                <h3>Garnish</h3>
-                <ul><li>${cocktail.detailed_recipe.garnish}</li></ul>
-            </div>
-        `;
-    }
     
     // Add instructions
     modalContent += `
@@ -224,17 +206,17 @@ function showRecipeModal(cocktailIndex) {
         </div>
     `;
     
-    // Add price
+    // Add garnish details again as per prompt
     modalContent += `
         <div class="recipe-section">
-            <h3>Price</h3>
-            <div style="font-size: 1.5rem; color: #C4A572; text-align: center;">$${cocktail.price}</div>
+            <h3>GARNISH:</h3>
+            <div class="recipe-instructions">${cocktail.garnish_details}</div>
         </div>
     `;
     
     modalBody.innerHTML = modalContent;
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
 }
 
 // Hide recipe modal
@@ -295,4 +277,62 @@ cocktailsGrid.addEventListener('mouseleave', function(e) {
         e.target.style.transform = 'translateY(0) scale(1)';
     }
 }, true);
+
+
+
+// Tabbed Navigation Logic
+const tabButtons = document.querySelectorAll(".tab-button");
+const tabPanes = document.querySelectorAll(".tab-pane");
+
+tabButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const targetTab = button.dataset.tab;
+
+        tabPanes.forEach(pane => {
+            if (pane.id === targetTab) {
+                pane.classList.add("active");
+            } else {
+                pane.classList.remove("active");
+            }
+        });
+
+        tabButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+    });
+});
+
+// Initial tab activation (e.g., activate Dashboard by default)
+document.addEventListener("DOMContentLoaded", () => {
+    const initialTab = document.querySelector(".tab-button.active");
+    if (initialTab) {
+        const targetPaneId = initialTab.dataset.tab;
+        const targetPane = document.getElementById(targetPaneId);
+        if (targetPane) {
+            targetPane.classList.add("active");
+        }
+    }
+});
+
+
+
+
+// Search functionality
+cocktailSearch.addEventListener("keyup", function() {
+    const searchTerm = cocktailSearch.value.toLowerCase();
+    const cards = cocktailsGrid.querySelectorAll(".cocktail-card");
+
+    cards.forEach(card => {
+        const cocktailName = card.querySelector(".cocktail-name").textContent.toLowerCase();
+        if (cocktailName.includes(searchTerm)) {
+            card.style.display = "flex"; // Show card
+            card.style.opacity = "1"; // Fade in
+        } else {
+            card.style.opacity = "0"; // Fade out
+            setTimeout(() => {
+                card.style.display = "none";
+            }, 300); // Hide after fade out
+        }
+    });
+});
+
 
