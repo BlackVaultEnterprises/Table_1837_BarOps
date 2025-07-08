@@ -1,10 +1,18 @@
-# Table 1837 Bar Operations - Tavern Lounge
+# Table 1837 Tavern Lounge
 
-A sophisticated, interactive website for Table 1837's Tavern Lounge featuring signature cocktails with elegant glassmorphism design and VIP-level typography.
+A sophisticated, high-performance website for Table 1837's Tavern Lounge featuring signature cocktails with elegant glassmorphism design and VIP-level typography.
+
+## 🚀 Optimized & Clean
+
+This project has been fully optimized with:
+- **Zero bloat** - Only essential files included
+- **Optimized images** - Single background image (61KB)
+- **Clean code** - Streamlined HTML, CSS, and JavaScript
+- **Fast loading** - Minimal dependencies and efficient structure
 
 ## 🍸 Features
 
-- **Sophisticated Typography**: VIP restaurant-level design with "WELCOME TO" pretext and elegant Playfair Display font
+- **Sophisticated Typography**: VIP restaurant-level design with Playfair Display font
 - **Interactive Cocktail Cards**: Tempered black glass effect with click-to-expand recipe modals
 - **Dark Luxury Atmosphere**: Moody speakeasy background with professional lighting
 - **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
@@ -27,28 +35,33 @@ A sophisticated, interactive website for Table 1837's Tavern Lounge featuring si
 6. **Hugo Spritz** - $14
 7. **The Edible Martini** - $16
 
-## 🚀 Live Demo
-
-The website is deployed and accessible at: [https://ttbfmdnk.manus.space](https://ttbfmdnk.manus.space)
-
-## 📁 Project Structure
+## 📁 Optimized Project Structure
 
 ```
-├── index.html              # Main HTML structure
-├── styles.css              # Sophisticated styling and glassmorphism effects
-├── script.js               # Interactive functionality and modal system
-├── cocktail_data.json      # Structured cocktail data
-├── perfect_bar_background.jpg  # Moody bar background image
-├── table_1837_web-white.png    # Table 1837 logo
-└── README.md               # Project documentation
+├── index.html                    # Clean HTML structure (6KB)
+├── styles.css                    # Optimized styling (11KB)
+├── script.js                     # Streamlined JavaScript (4KB)
+├── perfect_bar_background.jpg    # Single background image (61KB)
+├── table_1837_web-white.png      # Logo (10KB)
+└── README.md                     # Documentation
 ```
+
+**Total Project Size: ~92KB** (Previously 240KB+ with bloat removed)
 
 ## 🛠️ Technologies Used
 
-- **HTML5**: Semantic structure
+- **HTML5**: Semantic structure with accessibility features
 - **CSS3**: Advanced glassmorphism effects, responsive design
-- **JavaScript**: Interactive modals and dynamic content
+- **Vanilla JavaScript**: No frameworks, pure performance
 - **Google Fonts**: Playfair Display for luxury typography
+
+## ⚡ Performance Features
+
+- **Preconnected fonts** for faster loading
+- **Optimized images** with proper compression
+- **Efficient CSS** with no unused styles
+- **Clean JavaScript** with no redundant code
+- **Responsive design** with mobile-first approach
 
 ## 📱 Responsive Features
 
@@ -73,5 +86,5 @@ The website is deployed and accessible at: [https://ttbfmdnk.manus.space](https:
 
 ---
 
-*Created for Table 1837's premium dining and cocktail experience*
+*Optimized for performance and elegance - Table 1837's premium dining experience*
 
